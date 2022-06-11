@@ -1,0 +1,37 @@
+1) Docker
+
+docker ps 
+docker ps -a 
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+docker logs -f catalogdb # container_name
+docker exec -it catalogdb /bin/bash # interactive terminal
+# get into the mongo container 
+ls
+mongo # mongo command
+show dbs 
+use CatalogDb # create a new database
+db.createCollection('Products') # create a collection 
+db.Products.insertMany([{...}. {...}. {...}])
+
+> db.Products.InsertMany([{"name":"Steve", "price": 12.2}, {"name":"john", "price": 34.5}])
+uncaught exception: TypeError: db.Products.InsertMany is not a function :
+> db.Products.insert({...})
+> db.Products.find() # find all 
+# insertMany not InsertMany -- case sensitive
+> db.Products.find({}).pretty()
+> db.Products.remove({})
+> show databases
+> show collections
+> db.Products.drop()
+> db.dropDatabase() 
+
+docker logs -f container_name
+docker exec -it basketdb /bin/bash # not working
+docker exec -it basketdb  sh
+redis-cli 
+ping // return pong 
+set key value
+get key // return value
+set name steve 
+get name // return steve 
