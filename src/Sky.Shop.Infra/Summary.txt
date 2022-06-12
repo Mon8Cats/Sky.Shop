@@ -35,3 +35,9 @@ set key value
 get key // return value
 set name steve 
 get name // return steve 
+
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+
+docker-compose -f docker-composeX.yml -f docker-composeX.override.yml up -d 
